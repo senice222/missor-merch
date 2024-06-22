@@ -1,0 +1,168 @@
+.Header {
+  margin-top: 10px;
+  width: 1400px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  justify-content: space-between;
+  @media (max-width: 1400px) {
+    width: 95vw;
+  }
+
+  .burger {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+    @media (max-width: 790px) {
+      display: flex;
+    }
+  }
+
+  .links {
+    display: flex;
+    @media (max-width: 790px) {
+      display: none;
+    }
+
+    .link {
+      text-decoration: none;
+      color: #4C4C4C;
+      font-size: 15px;
+      line-height: 18px;
+
+      font-weight: 400;
+      margin-left: 15px;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    @media (max-width: 790px) {
+      display: none;
+    }
+
+    img {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+      margin-left: 15px;
+    }
+
+    .select {
+      margin-bottom: 15px;
+    }
+
+    .title {
+      color: #4D4D4D;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .selectCountry {
+      user-select: none;
+      cursor: pointer;
+      width: 150px;
+      height: 29px;
+      transition: .3s;
+      border: 1px solid #4D4D4D;
+      border-radius: 80px;
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+
+      p {
+        margin-left: 10px;
+        font-size: 15px;
+      }
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+
+    .selectCont {
+      margin-left: 5px;
+      width: 140px;
+      height: 0;
+      transition: .3s;
+      background-color: #D4D4D4;
+      box-shadow: 0px 14px 25px 0px rgba(0, 0, 0, 0.15);
+      position: absolute;
+      border-radius: 5px 5px 10px 10px;
+      overflow: hidden;
+
+      .item {
+        display: flex;
+        height: 35px;
+        user-select: none;
+        cursor: pointer;
+        align-items: center;
+
+        p {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          background-color: #cccccc;
+        }
+      }
+    }
+  }
+
+}
+
+.headerWrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.selectBoxOpened {
+  //border-radius: 80px 80px 20px 20px !important;
+}
+
+.selectOpened {
+  height: 38px !important;
+}
+
+.langChange {
+  //padding: 7px;
+  position: absolute;
+  width: 40px;
+  transition: .3s;
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 6px;
+  box-shadow: 0px 14px 25px 0px rgba(0, 0, 0, 0.15);
+  background-color: #D4D4D4;
+
+  p {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      background-color: #cccccc;
+    }
+  }
+}
+
+.langOpened {
+  max-height: 100px !important;
+
+}
+
+.logoContainer {
+  @media (max-width: 920px) {
+    img {
+      width: 120px;
+      height: auto;
+    }
+  }
+}

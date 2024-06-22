@@ -1,0 +1,117 @@
+.Header {
+  margin-top: 10px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  justify-content: space-between;
+  .select {
+    margin-bottom: 15px;
+  }
+  .title {
+    color: #4D4D4D;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .selectCountry {
+    cursor: pointer;
+    width: 150px;
+    height: 29px;
+    user-select: none;
+    border: 1px solid #4D4D4D;
+    border-radius: 80px;
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    p {
+      margin-left: 10px;
+      font-size: 15px;
+    }
+    svg {
+      margin-left: 10px;
+    }
+  }
+  .selectCont {
+    margin-left: 5px;
+    width: 140px;
+    height: 0;
+    transition: .3s;
+    background-color: #D4D4D4;
+    box-shadow: 0px 14px 25px 0px rgba(0,0,0,0.15);
+    position: absolute;
+    border-radius: 5px 5px 10px 10px;
+    overflow: hidden;
+    .item {
+      display: flex;
+      height: 35px;
+      user-select: none;
+      cursor: pointer;
+      align-items: center;
+      p {
+        margin-left: 10px;
+      }
+      &:hover {
+        background-color: #cccccc;
+      }
+    }
+  }
+  .right {
+
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    img {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+      margin-left: 15px;
+    }
+    .rightItem {
+      margin-top: 20px;
+      display: flex;
+      img {
+        width: 16px;
+        height: 16px;
+      }
+      p {
+        margin-left: 10px;
+        color: #4D4D4D;
+      }
+    }
+
+
+  }
+
+}
+.headerWrapper {
+  margin-top: 20px;
+  padding-top: 50px;
+  border-top: 1px solid #4D4D4D;
+  flex-direction: column;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  h2 {
+    margin-top: 40px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}
+.selectBoxOpened {
+  //border-radius: 80px 80px 20px 20px !important;
+}
+.selectOpened {
+  height: 38px !important;
+}
+
+@media (max-width: 930px) {
+  .Header {
+    padding: 0px !important;
+  }
+}
+
+@media (max-width: 730px) {
+  .Header {
+    flex-direction: column;
+  }
+}

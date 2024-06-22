@@ -1,0 +1,31 @@
+.homePhoto {
+  width: 1390px;
+  height: 640px;
+  background-image: url("../../assets/миссор 1.png");
+  display: flex;
+  justify-content: center;
+  @media (max-width: 1380px) {
+    display: none;
+  }
+  align-items: center;
+  div {
+    background-color: #EEEEEE;
+    width: 190px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4F4F4F;
+    font-size: 24px;
+    margin-left: 200px;
+    border-radius: 70px;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+.homeWrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+}
