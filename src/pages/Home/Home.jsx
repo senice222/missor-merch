@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         const currency = localStorage.getItem('currency');
         if (!currency) {
-            localStorage.setItem('currency', 'RUB');
+            localStorage.setItem('currency', 'USD');
         }
     }, []);
 
