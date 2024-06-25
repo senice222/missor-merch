@@ -16,3 +16,10 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #adadad;
 }
+img {
+  user-select: none;
+}
+.ant-notification-notice-wrapper {
+    background-color: #e1e1e1 !important;
+    color: white;
+}

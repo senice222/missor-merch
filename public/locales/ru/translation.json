@@ -35,5 +35,8 @@
   "Black": "Черный",
   "Pink": "Розовый",
   "Gray": "Серый",
-  "Delete from cart": "Удалить"
+  "Delete from cart": "Удалить",
+  "You successfully added item.": "Вы добавили предмет в корзину.",
+  "You deleted item.": "Вы удалили предмет.",
+  "Link copied to clipboard.": "Ссылка скопирована в буфер обмена."
 }

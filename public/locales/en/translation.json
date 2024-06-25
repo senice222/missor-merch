@@ -35,5 +35,8 @@
   "Black": "Black",
   "Pink": "Pink",
   "Gray": "Gray",
-  "Delete from cart": "Delete from cart"
+  "Delete from cart": "Delete from cart",
+  "You successfully added item.": "You successfully added item.",
+  "You deleted item.": "You deleted item.",
+  "Link copied to clipboard.": "Link copied to clipboard."
 }

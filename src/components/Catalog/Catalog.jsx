@@ -18,48 +18,48 @@ const Catalog = () => {
     const [hoodiePrice, setHoodie] = useState(13500);
     const [pantsPrice, setPants] = useState(7900);
     const [tshirtPrice, setTshirt] = useState(4900);
-
     const state = useSelector(state => state.cart.items)
+
     const handleNavigate = (name) => {
         navigate(`/product/${name}?M`, {replace: true});
         window.scrollTo(0, 0);
     };
-    const currency = localStorage.getItem('currency')
+    const currency = localStorage?.getItem('currency')
     const isHoodie = state.some(item => item.name === t("HOODIE"));
     const isTshirt = state.some(item => item.name === t("T-SHIRT"));
     const isPants = state.some(item => item.name === t("Pants"));
-    let currencyValue = currency === "RUB" ? '₽' : '$'
+    let currencyValue = currency === "RUB" ? "₽" : currency === "USD" ? "$" : currency === "BYN" ? "Br" : currency === "KZT" ? "₸" : currency === "KGS" ? "⃀" : currency === "AMD" ? "֏" : ""
 
 
     useEffect(() => {
-        if (currency === "USD") {
-            async function convertPricesToUSD() {
+        async function convertPrices(currency) {
+            const hoodiePriceConverted = await convertCurrency(hoodiePrice, 'RUB', currency);
+            const pantsPriceConverted = await convertCurrency(pantsPrice, 'RUB', currency);
+            const tshirtPriceConverted = await convertCurrency(tshirtPrice, 'RUB', currency);
 
-                const hoodiePriceUSD = await convertCurrency(hoodiePrice, 'RUB', 'USD');
-                const pantsPriceUSD = await convertCurrency(pantsPrice, 'RUB', 'USD');
-                const tshirtPriceUSD = await convertCurrency(tshirtPrice, 'RUB', 'USD');
-
-                if (hoodiePriceUSD !== null) {
-                    setHoodie(hoodiePriceUSD)
-                } else {
-                    console.log('Не удалось конвертировать цену худи в USD');
-                }
-
-                if (pantsPriceUSD !== null) {
-                    setPants(pantsPriceUSD)
-                } else {
-                    console.log('Не удалось конвертировать цену брюк в USD');
-                }
-
-                if (tshirtPriceUSD !== null) {
-                    setTshirt(tshirtPriceUSD)
-                } else {
-                    console.log('Не удалось конвертировать цену футболки в USD');
-                }
+            if (hoodiePriceConverted !== null) {
+                setHoodie(hoodiePriceConverted);
+            } else {
+                console.log(`Не удалось конвертировать цену худи в ${currency}`);
             }
-            convertPricesToUSD()
+
+            if (pantsPriceConverted !== null) {
+                setPants(pantsPriceConverted);
+            } else {
+                console.log(`Не удалось конвертировать цену брюк в ${currency}`);
+            }
+
+            if (tshirtPriceConverted !== null) {
+                setTshirt(tshirtPriceConverted);
+            } else {
+                console.log(`Не удалось конвертировать цену футболки в ${currency}`);
+            }
         }
-    }, []);
+
+        if (currency === "USD" || currency === "BYN" || currency === "KZT" || currency === "KGS" || currency === "AMD") {
+            convertPrices(currency);
+        }
+    }, [currency]);
 
 
     return (
@@ -82,9 +82,9 @@ const Catalog = () => {
                     <button onClick={(e) => {
                         e.stopPropagation()
                         !isHoodie ?
-                            dispatch(addItem({img: hoodie, name: "HOODIE", price: hoodiePrice, quantity: 1}))
+                            dispatch(addItem({img: hoodie, name: t("HOODIE"), price: hoodiePrice, quantity: 1}))
                             :
-                            dispatch(deleteItem("HOODIE"))
+                            dispatch(deleteItem(t("HOODIE")))
                     }}>
                         {isHoodie ? t("Delete from cart") : t("Add to cart")}
                     </button>
@@ -102,9 +102,9 @@ const Catalog = () => {
                     <button onClick={(e) => {
                         e.stopPropagation()
                         !isTshirt ?
-                            dispatch(addItem({img: tshirt, name: "T-SHIRT", price: tshirtPrice, quantity: 1}))
+                            dispatch(addItem({img: tshirt, name: t("T-SHIRT"), price: tshirtPrice, quantity: 1}))
                             :
-                            dispatch(deleteItem("T-SHIRT"))
+                            dispatch(deleteItem(t("T-SHIRT")))
                     }}>
                         {isTshirt ? t("Delete from cart") : t("Add to cart")}
                     </button>
@@ -123,9 +123,9 @@ const Catalog = () => {
                     <button onClick={(e) => {
                         e.stopPropagation()
                         !isPants ?
-                            dispatch(addItem({img: hoodie, name: "Pants", price: pantsPrice, quantity: 1}))
+                            dispatch(addItem({img: hoodie, name: t("Pants"), price: pantsPrice, quantity: 1}))
                             :
-                            dispatch(deleteItem("Pants"))
+                            dispatch(deleteItem(t("Pants")))
                     }}>
                         {!isPants ? t("Add to cart") : t("Delete from cart")}
                     </button>

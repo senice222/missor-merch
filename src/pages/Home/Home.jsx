@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 import {parseCookies} from "nookies";
 import {useMyContext} from "../../context/useMyContext";
 import {useEffect} from "react";
+import {useSelector} from "react-redux";
 
 const Home = () => {
     const {t} = useTranslation();
@@ -14,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const currency = localStorage.getItem('currency');
         if (!currency) {
-            localStorage.setItem('currency', 'USD');
+            localStorage.setItem('currency', 'RUB');
         }
     }, []);
 

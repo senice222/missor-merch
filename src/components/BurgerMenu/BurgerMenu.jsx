@@ -64,7 +64,7 @@ export const BurgerMenu = ({isOpened, setOpened, scrollTo, blockRef1}) => {
                         <p className={s.title}>{t("Country/region")}</p>
                         <div onClick={() => setOpenned((prev) => !prev)}
                              className={`${s.selectCountry} ${openned ? s.selectBoxOpened : ""}`}>
-                            <p>{currency === "RUB" ? "Россия" : "USA"}</p>
+                            <p>{currency === "RUB" ? "Россия" : currency === "USD" ? "USA" : currency === "BYN" ? "Беларусь" : currency === "KZT" ? "Казахстан" : currency === "KGS" ? "Кыргызстан" : currency === "AMD" ? "Армения" : ""}</p>
                             <p>|</p>
                             <p>{currency}</p>
                             <svg
@@ -82,15 +82,6 @@ export const BurgerMenu = ({isOpened, setOpened, scrollTo, blockRef1}) => {
                         </div>
                         <div className={`${s.selectCont} ${openned ? s.selectOpened : ""}`}>
                             {
-                                currency === "USD" ? null :
-                                    <div onClick={() => handleRegion({country: 'USA', currency: 'USD'})}
-                                         className={s.item}>
-                                        <p>USA</p>
-                                        <p>|</p>
-                                        <p>Usd</p>
-                                    </div>
-                            }
-                            {
                                 currency === "RUB" ? null :
                                     <div onClick={() => handleRegion({country: 'Russia', currency: 'RUB'})}
                                          className={s.item}>
@@ -99,6 +90,43 @@ export const BurgerMenu = ({isOpened, setOpened, scrollTo, blockRef1}) => {
                                         <p>Rub</p>
                                     </div>
                             }
+                            {
+                                currency === "BYN" ? null :
+                                    <div onClick={() => handleRegion({country: 'Belarus', currency: 'BYN'})}
+                                         className={s.item}>
+                                        <p>Беларусь | BYN</p>
+                                        {/*<p></p>*/}
+                                        {/*<p>Rub</p>*/}
+                                    </div>
+                            }
+                            {
+                                currency === "KZT" ? null :
+                                    <div onClick={() => handleRegion({country: 'Kazakhstan', currency: 'KZT'})}
+                                         className={s.item}>
+                                        <p style={{fontSize: '14px'}}>Казахстан | KZT</p>
+                                        {/*<p></p>*/}
+                                        {/*<p>Rub</p>*/}
+                                    </div>
+                            }
+                            {
+                                currency === "KGS" ? null :
+                                    <div onClick={() => handleRegion({country: 'Kyrgyzstan', currency: 'KGS'})}
+                                         className={s.item}>
+                                        <p style={{fontSize: '14px'}}>Кыргызстан | KGS</p>
+                                        {/*<p></p>*/}
+                                        {/*<p>Rub</p>*/}
+                                    </div>
+                            }
+                            {
+                                currency === "AMD" ? null :
+                                    <div onClick={() => handleRegion({country: 'Armenia', currency: 'AMD'})}
+                                         className={s.item}>
+                                        <p style={{fontSize: '14px'}}>Армения | AMD</p>
+                                        {/*<p></p>*/}
+                                        {/*<p>Rub</p>*/}
+                                    </div>
+                            }
+
                         </div>
                     </div>
                     <div className={s.botItems}>

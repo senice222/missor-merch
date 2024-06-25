@@ -62,7 +62,7 @@
     .selectCountry {
       user-select: none;
       cursor: pointer;
-      width: 150px;
+      width: 170px;
       height: 29px;
       transition: .3s;
       border: 1px solid #4D4D4D;
@@ -111,11 +111,20 @@
   }
 
 }
-
+.cart {
+  margin-left: 10px;
+  cursor: pointer;
+}
 .headerWrapper {
   width: 100vw;
   display: flex;
   justify-content: center;
+}
+
+.logoContainer {
+  img {
+    cursor: pointer;
+  }
 }
 
 .selectBoxOpened {
@@ -123,7 +132,7 @@
 }
 
 .selectOpened {
-  height: 38px !important;
+  height: 150px !important;
 }
 
 .langChange {
