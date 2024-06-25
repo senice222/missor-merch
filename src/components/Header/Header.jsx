@@ -56,9 +56,9 @@ export const Header = ({scrollTo, blockRef1}) => {
                             <p className={s.title}>{t("Country/region")}</p>
                             <div onClick={() => setOpenned((prev) => !prev)}
                                  className={`${s.selectCountry} ${openned ? s.selectBoxOpened : ""}`}>
-                                <p>{currency === "RUB" ? "Россия" : currency === "USD" ? "USA" : currency === "BYN" ? "Беларусь" : currency === "KZT" ? "Казахстан" : currency === "KGS" ? "Кыргызстан" : currency === "AMD" ? "Армения" : ""}</p>
+                                <p>{currency === "RUB" ? "Россия" : currency === "USD" ? "USA" : currency === "BYN" ? "Беларусь" : currency === "KZT" ? "Казахстан" : currency === "KGS" ? "Кыргызстан" : currency === "AMD" ? "Армения" : "Россия"}</p>
                                 <p>|</p>
-                                <p>{currency}</p>
+                                <p>{currency ? currency : "RUB"}</p>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width={9}
