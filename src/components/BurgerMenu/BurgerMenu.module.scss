@@ -156,3 +156,37 @@
 .botItems {
   display: flex;
 }
+.cartDiv {
+  margin-left: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  p {
+    text-align: center;
+    //margin-left: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #D4D4D4;
+  }
+  .circle {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    top: 3px;
+    margin-top: 7px;
+    left: 3px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 2;
+    position: absolute;
+  }
+  .cart {
+    z-index: 1;
+    position: absolute;
+  }
+}

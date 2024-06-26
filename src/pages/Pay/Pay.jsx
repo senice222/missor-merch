@@ -13,7 +13,7 @@ const Contact = () => {
     } = useForm();
     const {t} = useTranslation();
     const cart = useSelector((state) => state.cart.items)
-
+    const currency = localStorage.getItem("currency")
     const validatePhoneNumber = (value) => {
         const cleanedValue = value.replace(/[^\d+]/g, '');
         const phoneRegex = /^\+\d{10,15}$/;
@@ -28,10 +28,14 @@ const Contact = () => {
         ORDER:
         ${cart.map((item) => `
 📦<b>Product</b>: ${item.name}
-💸<b>Price</b>: ${item.price}
+💸<b>Price</b>: ${item.price} {currency}
 🗓<b>Size</b>: ${item.size}
 🌺<b>Color</b>: ${item.color}
 👉🏻<b>Quantity</b>: ${item.quantity}
+
+🧑Name: ${data.name}
+✈️Telegram: ${data.telegram}
+☎️Phone: ${data.phone}
 `)}
         `
         console.log(text)
