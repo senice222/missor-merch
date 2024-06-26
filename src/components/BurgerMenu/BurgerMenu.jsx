@@ -133,7 +133,10 @@ export const BurgerMenu = ({isOpened, setOpened, scrollTo, blockRef1}) => {
                     </div>
                     <div className={s.botItems}>
                         <img src={monkey} onClick={() => navigate('/contact')} alt={'monkey'}/>
-                        <div onClick={() => navigate('/cart')} className={s.cartDiv}>
+                        <div onClick={() => {
+                            navigate('/cart')
+                            setOpened()
+                        }} className={s.cartDiv}>
                             {count === 0 ? null : <div className={s.circle}>
                                 <p>{count}</p>
                             </div>}

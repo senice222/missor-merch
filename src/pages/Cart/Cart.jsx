@@ -45,19 +45,19 @@ const Cart = () => {
                                             <div className={style.wrappQuantity}>
                                                 <div className={style.quantity}>
                                                     <button onClick={() => dispatch(changeQuantity({
-                                                        name: item.name,
+                                                        id: item.id,
                                                         quantity: item.quantity - 1
                                                     }))}>-
                                                     </button>
                                                     <input type="text" value={item.quantity} readOnly/>
                                                     <button onClick={() => dispatch(changeQuantity({
-                                                        name: item.name,
+                                                        id: item.id,
                                                         quantity: item.quantity + 1
                                                     }))}>+
                                                     </button>
                                                 </div>
                                                 <span className={style.delete}
-                                                      onClick={() => dispatch(deleteItem(item.name))}
+                                                      onClick={() => dispatch(deleteItem(item.id))}
                                                 >
                                                         <img className={style.img} src={trash} alt={'/'}/>
                                                 </span>
