@@ -9,6 +9,7 @@ const Contact = () => {
     const {
         register,
         handleSubmit,
+        resetField,
         formState: {errors},
     } = useForm();
     const {t} = useTranslation();
@@ -21,18 +22,15 @@ const Contact = () => {
     };
 
     const onSubmit = async (data) => {
-        console.log(data);
-        // img: hoodie, name: t("HOODIE"), price: hoodiePrice, quantity: 1
         const text = `
         
         ORDER:
         ${cart.map((item) => `
 📦<b>Product</b>: ${item.name}
-💸<b>Price</b>: ${item.price} {currency}
+💸<b>Price</b>: ${item.price} ${currency}
 🗓<b>Size</b>: ${item.size}
 🌺<b>Color</b>: ${item.color}
 👉🏻<b>Quantity</b>: ${item.quantity}
-
 
 `)}
 🧑Name: ${data.name}
@@ -40,6 +38,11 @@ const Contact = () => {
 ☎️Phone: ${data.phone}
         `
         await sendInfo(text);
+        notification.success({
+            message: t("Thank you for your order! A manager will contact you shortly"),
+            duration: 2
+        })
+        resetField()
     };
 
     return (
