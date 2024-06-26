@@ -9,7 +9,7 @@ const Contact = () => {
     const {
         register,
         handleSubmit,
-        resetField,
+        reset,
         formState: {errors},
     } = useForm();
     const {t} = useTranslation();
@@ -42,7 +42,7 @@ const Contact = () => {
             message: t("Thank you for your order! A manager will contact you shortly"),
             duration: 2
         })
-        resetField()
+        reset()
     };
 
     return (
