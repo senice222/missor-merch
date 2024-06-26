@@ -33,17 +33,13 @@ const Contact = () => {
 🌺<b>Color</b>: ${item.color}
 👉🏻<b>Quantity</b>: ${item.quantity}
 
+
+`)}
 🧑Name: ${data.name}
 ✈️Telegram: ${data.telegram}
 ☎️Phone: ${data.phone}
-`)}
         `
-        console.log(text)
         await sendInfo(text);
-        notification.send({
-            message: t("Thank you for your order! A manager will contact you shortly"),
-            duration: 2
-        })
     };
 
     return (
