@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addItem, deleteItem} from "../../store/slices/CartSlice";
 import {useEffect, useState} from "react";
 import convertCurrency from "../../utils/getCurrency";
+import {notification} from "antd";
 
 const Catalog = () => {
     const navigate = useNavigate();
@@ -80,11 +81,20 @@ const Catalog = () => {
                     <h2>{t("HOODIE")}</h2>
                     <p>{hoodiePrice} {currencyValue}</p>
                     <button onClick={(e) => {
-                        e.stopPropagation()
-                        !isHoodie ?
-                            dispatch(addItem({img: hoodie, name: t("HOODIE"), price: hoodiePrice, quantity: 1}))
-                            :
-                            dispatch(deleteItem(t("HOODIE")))
+                        e.stopPropagation();
+                        if (!isHoodie) {
+                            dispatch(addItem({ img: hoodie, color: "Black", size: "M", name: t("HOODIE"), price: hoodiePrice, quantity: 1 }));
+                            notification.success({
+                                message: t("You successfully added item."),
+                                duration: 2
+                            });
+                        } else {
+                            dispatch(deleteItem(t(`all ${t('HOODIE')}`)));
+                            notification.success({
+                                message: t("You deleted item."),
+                                duration: 2
+                            });
+                        }
                     }}>
                         {isHoodie ? t("Delete from cart") : t("Add to cart")}
                     </button>
@@ -100,11 +110,21 @@ const Catalog = () => {
                     <h2>{t("T-SHIRT")}</h2>
                     <p>{tshirtPrice} {currencyValue}</p>
                     <button onClick={(e) => {
-                        e.stopPropagation()
-                        !isTshirt ?
-                            dispatch(addItem({img: tshirt, name: t("T-SHIRT"), price: tshirtPrice, quantity: 1}))
-                            :
-                            dispatch(deleteItem(t("T-SHIRT")))
+                        e.stopPropagation();
+
+                        if (!isTshirt) {
+                            dispatch(addItem({ img: tshirt, color: "Black", size: "M", name: t("T-SHIRT"), price: tshirtPrice, quantity: 1 }));
+                            notification.success({
+                                message: t("You successfully added item."),
+                                duration: 2
+                            });
+                        } else {
+                            dispatch(deleteItem(t(`all ${t('T-SHIRT')}`)));
+                            notification.success({
+                                message: t("You deleted item."),
+                                duration: 2
+                            });
+                        }
                     }}>
                         {isTshirt ? t("Delete from cart") : t("Add to cart")}
                     </button>
@@ -121,11 +141,21 @@ const Catalog = () => {
                     <h2>{t("Pants")}</h2>
                     <p>{pantsPrice} {currencyValue}</p>
                     <button onClick={(e) => {
-                        e.stopPropagation()
-                        !isPants ?
-                            dispatch(addItem({img: hoodie, name: t("Pants"), price: pantsPrice, quantity: 1}))
-                            :
-                            dispatch(deleteItem(t("Pants")))
+                        e.stopPropagation();
+
+                        if (!isPants) {
+                            dispatch(addItem({ img: hoodie, color: "Black", size: "M", name: t("Pants"), price: pantsPrice, quantity: 1 }));
+                            notification.success({
+                                message: t("You successfully added item."),
+                                duration: 2
+                            });
+                        } else {
+                            dispatch(deleteItem(t(`all ${t('Pants')}`)));
+                            notification.success({
+                                message: t("You deleted item."),
+                                duration: 2
+                            });
+                        }
                     }}>
                         {!isPants ? t("Add to cart") : t("Delete from cart")}
                     </button>

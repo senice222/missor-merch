@@ -19,6 +19,7 @@
   "YOUR CART IS EMPTY": "YOUR CART IS EMPTY",
   "Continue shopping": "Continue shopping",
   "Name": "Name",
+  "Phone number with +": "Phone number with +",
   "Telegram": "Telegram",
   "Phone number": "Phone number",
   "Comment": "Comment",
@@ -38,5 +39,7 @@
   "Delete from cart": "Delete from cart",
   "You successfully added item.": "You successfully added item.",
   "You deleted item.": "You deleted item.",
-  "Link copied to clipboard.": "Link copied to clipboard."
+  "Link copied to clipboard.": "Link copied to clipboard.",
+  "Enter your data": "Enter your data",
+  "Thank you for your order! A manager will contact you shortly": "Thank you for your order! A manager will contact you shortly"
 }

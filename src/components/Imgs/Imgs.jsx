@@ -10,6 +10,12 @@ import pants1 from "../../assets/pants1.png";
 import pinkFirst from "../../assets/pink-tshirt2.jpg";
 import pinkSecond from "../../assets/pink-tshirt.jpg";
 import tshirtFirst from "../../assets/tshirtFirst.jpg";
+import pants3 from "../../assets/штьаны 11.jpg";
+import pants4 from "../../assets/штаны  13.jpg";
+import futbolka from "../../assets/футболка 12.jpg";
+import blackH from "../../assets/image 3.png";
+import gray from "../../assets/gray.png";
+import grayF from "../../assets/image 2 (1).png";
 
 const Imgs = ({selectedName, selectedColor}) => {
 
@@ -17,33 +23,33 @@ const Imgs = ({selectedName, selectedColor}) => {
         "hoodie": {
             "Pink": pinkFirst,
             "Black": women,
-            "Gray": [],
+            "Gray": gray,
         },
         "t-shirt": {
             "Pink": pinkFirst,
             "Black": tshirtFirst,
-            "Gray": [],
+            "Gray": futbolka,
         },
         "pants": {
-            "Pink": pinkFirst,
-            "Black": pants2,
-            "Gray": [],
+            "Pink": pants3,
+            "Black": pants4,
+            "Gray": [tshirtFirst],
         }
     }
     const detailedInfo = {
         "hoodie": {
             "Pink": [pinkSecond],
-            "Black": [first, second, third],
-            "Gray": [],
+            "Black": [first, blackH],
+            "Gray": [third],
         },
         "t-shirt": {
             "Pink": [pinkSecond],
             "Black": [pants2],
-            "Gray": [],
+            "Gray": [grayF],
         },
         "pants": {
-            "Pink": [pinkSecond],
-            "Black": [pants1, tshirtFirst],
+            "Pink": [pinkFirst],
+            "Black": [pants1, tshirtFirst, pants4],
             "Gray": [],
         }
     }

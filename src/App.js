@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import convertCurrency from "./utils/getCurrency";
 import {setHoodiePrice, setPantsPrice, setTshirtPrice} from "./store/slices/PricesSlice";
+import Pay from "./pages/Pay/Pay";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart />
+            },
+            {
+                path: '/pay',
+                element: <Pay />
             },
             {
                 path: '*',

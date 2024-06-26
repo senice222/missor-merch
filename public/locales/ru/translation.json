@@ -32,11 +32,14 @@
   "QUANTITY": "КОЛИЧЕВСТВО",
   "TOTAL": "ВСЕГО",
   "PAY": "ОПЛАТИТЬ",
+  "Phone number with +": "Номер телефона с +",
   "Black": "Черный",
   "Pink": "Розовый",
   "Gray": "Серый",
   "Delete from cart": "Удалить",
   "You successfully added item.": "Вы добавили предмет в корзину.",
   "You deleted item.": "Вы удалили предмет.",
-  "Link copied to clipboard.": "Ссылка скопирована в буфер обмена."
+  "Link copied to clipboard.": "Ссылка скопирована в буфер обмена.",
+  "Enter your data": "Введите свои данные",
+  "Thank you for your order! A manager will contact you shortly": "Благодарим за заказ! В ближайшее время с вами свяжется менеджер"
 }

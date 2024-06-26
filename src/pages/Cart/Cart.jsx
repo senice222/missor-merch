@@ -13,7 +13,7 @@ const Cart = () => {
     const items = useSelector((state) => state.cart.items)
     const {t} = useTranslation();
     const currency = localStorage.getItem('currency')
-    let currencyValue = currency === "RUB" ? '₽' : '$'
+    let currencyValue = currency === "RUB" ? "₽" : currency === "USD" ? "$" : currency === "BYN" ? "Br" : currency === "KZT" ? "₸" : currency === "KGS" ? "⃀" : currency === "AMD" ? "֏" : ""
 
     return (
         <div className={style.cart}>
@@ -37,6 +37,8 @@ const Cart = () => {
                                             <div className={style.product}>
                                                 <h2>{item.name}</h2>
                                                 <p>{item.price} {currencyValue}</p>
+                                                <p>Size: {item.size}</p>
+                                                <p>Color: {item.color}</p>
                                             </div>
                                         </td>
                                         <td>
@@ -67,7 +69,7 @@ const Cart = () => {
                                 </tbody>
                             </table>
                             <div className={style.payButton}>
-                                <button>{t("PAY")}</button>
+                                <button onClick={() => navigate('/pay')}>{t("PAY")}</button>
                             </div>
                         </>
                     ) :
