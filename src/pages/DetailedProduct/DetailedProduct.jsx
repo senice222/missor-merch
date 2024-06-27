@@ -17,12 +17,8 @@ import hoodie from "../../assets/HUDI BLACK 3 1.png";
 import tshirt from "../../assets/t-shirt.png";
 import ItemCounters from "../../components/ItemCounters/ItemCounters";
 import {ShareSVG} from "../../components/Svgs/Svg";
-// notification.config({
-//     placement: 'top',  // initially place it on the top
-//     top: '50px',          // this makes sure the initial top position is somewhat centered
-//     duration: 2,      // optional, sets the duration of the notification
-//     className: 'custom-notification',
-// });
+
+
 const DetailedProduct = () => {
     const [quantity, setQuantity] = useState(1);
     const { name } = useParams();
@@ -40,11 +36,10 @@ const DetailedProduct = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     const products = [
-        { name: "hoodie", src: second, link: "/product/hoodie" },
-        { name: "t-shirt", src: pants2, link: "/product/t-shirt" },
-        { name: "pants", src: pants1, link: "/product/pants" }
+        { name: "hoodie", src: second, link: "/product/hoodie?color=Black&size=M" },
+        { name: "t-shirt", src: pants2, link: "/product/t-shirt?color=Black&size=M" },
+        { name: "pants", src: pants1, link: "/product/pants?color=Black&size=M" }
     ];
-
     const objPrices = {
         "hoodie": {
             name: t("HOODIE"),
@@ -69,6 +64,10 @@ const DetailedProduct = () => {
         setFilteredProducts(filtered);
     }, [name]);
 
+    useEffect(() => {
+        setSelectedColor('Black')
+    }, [name]);
+    
     useEffect(() => {
         const params = queryString.stringify({ size: selectedSize, color: selectedColor });
         navigate(`/product/${name}?${params}`, { replace: true });

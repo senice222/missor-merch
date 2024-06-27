@@ -2,18 +2,13 @@ import React, {useEffect, useState} from 'react';
 import style from "../../pages/DetailedProduct/DetailedProduct.module.scss";
 import {AnimatePresence, motion} from "framer-motion";
 import first from "../../assets/firstImg.png";
-import second from "../../assets/secondImg.png";
 import third from "../../assets/third.png";
 import women from "../../assets/hoodie-women.png";
 import pants2 from "../../assets/pants2.png";
 import pants1 from "../../assets/pants1.png";
 import pinkFirst from "../../assets/pink-tshirt2.jpg";
 import pinkSecond from "../../assets/pink-tshirt.jpg";
-import tshirtFirst from "../../assets/tshirtFirst.jpg";
-import pants3 from "../../assets/штьаны 11.jpg";
-import pants4 from "../../assets/штаны  13.jpg";
 import futbolka from "../../assets/футболка 12.jpg";
-import blackH from "../../assets/image 3.png";
 import gray from "../../assets/gray.png";
 import grayF from "../../assets/image 2 (1).png";
 import pants21 from '../../assets/штьаны 11.jpg'
@@ -21,8 +16,9 @@ import blackpants from '../../assets/asDasdad.jpg'
 import graypants from '../../assets/grayasdasdasdas.jpg'
 import grayhoodie from '../../assets/gray_hoodie_back.jpg'
 import tshirtblack from '../../assets/firstImg.png'
+import queryString from "query-string";
 
-const Imgs = ({selectedName, selectedColor}) => {
+const Imgs = ({selectedName, selectedColor, name}) => {
 
     const titleInfo = {
         "hoodie": {
@@ -38,7 +34,7 @@ const Imgs = ({selectedName, selectedColor}) => {
         "pants": {
             // "Pink": pants3,
             "Black": blackpants,
-            "Gray": [pants1],
+            "Gray": pants1,
         }
     }
     const detailedInfo = {
@@ -92,19 +88,19 @@ const Imgs = ({selectedName, selectedColor}) => {
                     className={style.titleImg}
                     src={selectedImage}
                     alt="Title"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{opacity: 0, scale: 0.95}}
+                    animate={{opacity: 1, scale: 1}}
+                    exit={{opacity: 0, scale: 0.95}}
+                    transition={{duration: 0.3}}
                 />
             </AnimatePresence>
             <div>
                 {detailImages?.map((imgSrc, index) => (
                     <motion.img
-                        initial={{ opacity: 0, scale: 0.95, filter: 'brightness(0)' }}
-                        animate={{ opacity: 1, scale: 1, filter: 'brightness(1)' }}
-                        exit={{ opacity: 0, scale: 0.95, filter: 'brightness(0)' }}
-                        transition={{ duration: 0.7 }}
+                        initial={{opacity: 0, scale: 0.95, filter: 'brightness(0)'}}
+                        animate={{opacity: 1, scale: 1, filter: 'brightness(1)'}}
+                        exit={{opacity: 0, scale: 0.95, filter: 'brightness(0)'}}
+                        transition={{duration: 0.7}}
                         key={imgSrc}
                         src={imgSrc}
                         alt={`Detail-Image-${index}`}
