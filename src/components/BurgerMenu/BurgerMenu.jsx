@@ -132,7 +132,7 @@ export const BurgerMenu = ({isOpened, setOpened, scrollTo, blockRef1}) => {
                         </div>
                     </div>
                     <div className={s.botItems}>
-                        <img src={monkey} onClick={() => navigate('/contact')} alt={'monkey'}/>
+                        <img src={monkey} className={s.monkey} onClick={() => navigate('/contact')} alt={'monkey'}/>
                         <div onClick={() => {
                             navigate('/cart')
                             setOpened()
