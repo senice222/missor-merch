@@ -99,6 +99,7 @@
     position: absolute;
     border-radius: 5px 5px 10px 10px;
     overflow: hidden;
+    z-index: 10;
     .item {
       display: flex;
       height: 35px;
