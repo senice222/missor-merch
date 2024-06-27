@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 import style from "../../pages/DetailedProduct/DetailedProduct.module.scss";
 import {useTranslation} from "react-i18next";
 
-const ItemCounters = ({setSelectedSize, setSelectedColor, size, color}) => {
+const ItemCounters = ({setSelectedSize, setSelectedColor, size, color, isPink}) => {
     const {t} = useTranslation()
 
     const handleSizeClick = (selectedSize) => {
@@ -12,7 +12,7 @@ const ItemCounters = ({setSelectedSize, setSelectedColor, size, color}) => {
     const handleColorClick = (selectedColor) => {
         setSelectedColor(selectedColor);
     };
-
+    const colors = isPink ? ["Black", "Pink", "Gray"] : ["Black", "Gray"]
     const getColorClass = (color) => {
         switch (color) {
             case 'Черный':
@@ -69,7 +69,7 @@ const ItemCounters = ({setSelectedSize, setSelectedColor, size, color}) => {
                     {t("Color")}
                 </motion.p>
                 <div className={style.options}>
-                    {["Black", "Pink", "Gray"].map((c) => (
+                    {colors.map((c) => (
                         <motion.div
                             viewport={{once: true}}
                             whileInView={{y: -10, opacity: 1}}

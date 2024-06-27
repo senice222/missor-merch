@@ -23,3 +23,10 @@ img {
     background-color: #e1e1e1 !important;
     color: white;
 }
+.custom-notification {
+  /*position: absolute;*/
+  /*margin-top: 45vh;*/
+  top: 50%;
+  left: 50%;
+  /*transform: translate(-50%, -50%);*/
+}

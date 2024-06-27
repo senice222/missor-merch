@@ -17,7 +17,12 @@ import hoodie from "../../assets/HUDI BLACK 3 1.png";
 import tshirt from "../../assets/t-shirt.png";
 import ItemCounters from "../../components/ItemCounters/ItemCounters";
 import {ShareSVG} from "../../components/Svgs/Svg";
-
+notification.config({
+    placement: 'top',  // initially place it on the top
+    top: '50px',          // this makes sure the initial top position is somewhat centered
+    duration: 2,      // optional, sets the duration of the notification
+    className: 'custom-notification',
+});
 const DetailedProduct = () => {
     const [quantity, setQuantity] = useState(1);
     const { name } = useParams();
@@ -111,7 +116,13 @@ const DetailedProduct = () => {
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
-
+    const isPink = () => {
+        if (name === "hoodie" || name === "pants") {
+            return false
+        } else {
+            return true
+        }
+    }
     return (
         <div className={style.productWrapper}>
             <div className={style.container}>
@@ -139,6 +150,7 @@ const DetailedProduct = () => {
                         <ItemCounters
                             setSelectedSize={setSelectedSize} setSelectedColor={setSelectedColor}
                             size={size} color={color}
+                            isPink={isPink()}
                         />
                         <div className={style.quantity}>
                             <motion.h2

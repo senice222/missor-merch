@@ -16,41 +16,46 @@ import futbolka from "../../assets/футболка 12.jpg";
 import blackH from "../../assets/image 3.png";
 import gray from "../../assets/gray.png";
 import grayF from "../../assets/image 2 (1).png";
+import pants21 from '../../assets/штьаны 11.jpg'
+import blackpants from '../../assets/asDasdad.jpg'
+import graypants from '../../assets/grayasdasdasdas.jpg'
+import grayhoodie from '../../assets/gray_hoodie_back.jpg'
+import tshirtblack from '../../assets/firstImg.png'
 
 const Imgs = ({selectedName, selectedColor}) => {
 
     const titleInfo = {
         "hoodie": {
-            "Pink": pinkFirst,
+            // "Pink": pinkFirst,
             "Black": women,
             "Gray": gray,
         },
         "t-shirt": {
             "Pink": pinkFirst,
-            "Black": tshirtFirst,
+            "Black": pants2,
             "Gray": futbolka,
         },
         "pants": {
-            "Pink": pants3,
-            "Black": pants4,
-            "Gray": [tshirtFirst],
+            // "Pink": pants3,
+            "Black": blackpants,
+            "Gray": [pants1],
         }
     }
     const detailedInfo = {
         "hoodie": {
-            "Pink": [pinkSecond],
-            "Black": [first, blackH],
-            "Gray": [third],
+            // "Pink": [pinkSecond],
+            "Black": [first],
+            "Gray": [third, grayhoodie],
         },
         "t-shirt": {
             "Pink": [pinkSecond],
-            "Black": [pants2],
+            "Black": [tshirtblack],
             "Gray": [grayF],
         },
         "pants": {
-            "Pink": [pinkFirst],
-            "Black": [pants1, tshirtFirst, pants4],
-            "Gray": [],
+            // "Pink": [pinkFirst],
+            "Black": [pants21],
+            "Gray": [graypants],
         }
     }
     const [selectedImage, setSelectedImage] = useState(titleInfo[selectedName][selectedColor])

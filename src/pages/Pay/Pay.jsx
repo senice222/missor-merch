@@ -37,12 +37,13 @@ const Contact = () => {
 ✈️Telegram: ${data.telegram}
 ☎️Phone: ${data.phone}
         `
-        await sendInfo(text);
+        // await sendInfo(text);
         notification.success({
             message: t("Thank you for your order! A manager will contact you shortly"),
-            duration: 2
+            duration: 4,
+            className: 'custom-notification'
         })
-        reset()
+        // reset()
     };
 
     return (
