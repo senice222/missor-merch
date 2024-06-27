@@ -123,6 +123,8 @@ const DetailedProduct = () => {
             return true
         }
     }
+    const isTshirt = name === "t-shirt" ? true : false
+
     return (
         <div className={style.productWrapper}>
             <div className={style.container}>
@@ -151,6 +153,7 @@ const DetailedProduct = () => {
                             setSelectedSize={setSelectedSize} setSelectedColor={setSelectedColor}
                             size={size} color={color}
                             isPink={isPink()}
+                            isTshirt={isTshirt}
                         />
                         <div className={style.quantity}>
                             <motion.h2
