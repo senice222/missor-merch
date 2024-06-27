@@ -17,12 +17,12 @@ import hoodie from "../../assets/HUDI BLACK 3 1.png";
 import tshirt from "../../assets/t-shirt.png";
 import ItemCounters from "../../components/ItemCounters/ItemCounters";
 import {ShareSVG} from "../../components/Svgs/Svg";
-notification.config({
-    placement: 'top',  // initially place it on the top
-    top: '50px',          // this makes sure the initial top position is somewhat centered
-    duration: 2,      // optional, sets the duration of the notification
-    className: 'custom-notification',
-});
+// notification.config({
+//     placement: 'top',  // initially place it on the top
+//     top: '50px',          // this makes sure the initial top position is somewhat centered
+//     duration: 2,      // optional, sets the duration of the notification
+//     className: 'custom-notification',
+// });
 const DetailedProduct = () => {
     const [quantity, setQuantity] = useState(1);
     const { name } = useParams();
@@ -78,6 +78,7 @@ const DetailedProduct = () => {
         const url = window.location.href;
         navigator.clipboard.writeText(url).then(() => {
             notification.success({
+                placement: 'topRight',
                 message: t("Link copied to clipboard."),
                 duration: 1.5,
             });

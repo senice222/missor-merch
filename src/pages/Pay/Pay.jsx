@@ -39,8 +39,9 @@ const Contact = () => {
         `
         // await sendInfo(text);
         notification.success({
+            placement: 'top',
             message: t("Thank you for your order! A manager will contact you shortly"),
-            duration: 4,
+            duration: 7,
             className: 'custom-notification'
         })
         // reset()

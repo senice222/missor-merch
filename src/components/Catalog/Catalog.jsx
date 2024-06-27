@@ -2,6 +2,7 @@ import style from './Catalog.module.scss'
 import hoodie from '../../assets/HUDI BLACK 3 1.png'
 import tshirt from '../../assets/t-shirt.png'
 import {motion} from "framer-motion";
+import pants from '../../assets/photo_2024.jpg'
 import {useNavigate} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
 import {useMyContext} from "../../context/useMyContext";
@@ -137,7 +138,7 @@ const Catalog = () => {
                     className={style.item}
                     onClick={() => handleNavigate("pants")}
                 >
-                    <img src={hoodie} alt={'/'}/>
+                    <img src={pants} alt={'/'}/>
                     <h2>{t("Pants")}</h2>
                     <p>{pantsPrice} {currencyValue}</p>
                     <button onClick={(e) => {
