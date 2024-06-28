@@ -15,8 +15,7 @@ import pants21 from '../../assets/штьаны 11.jpg'
 import blackpants from '../../assets/asDasdad.jpg'
 import graypants from '../../assets/grayasdasdasdas.jpg'
 import grayhoodie from '../../assets/gray_hoodie_back.jpg'
-import tshirtblack from '../../assets/firstImg.png'
-import queryString from "query-string";
+import tshirtblack from '../../assets/Screenshot_1.png'
 
 const Imgs = ({selectedName, selectedColor, name}) => {
 

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {motion} from "framer-motion";
 import style from "../../pages/DetailedProduct/DetailedProduct.module.scss";
 import {useTranslation} from "react-i18next";
 
 const ItemCounters = ({setSelectedSize, setSelectedColor, size, color, isPink, isTshirt}) => {
     const {t} = useTranslation()
+    const [sizes, setSizes] = useState(["M", "L", "XL"])
 
     const handleSizeClick = (selectedSize) => {
         setSelectedSize(selectedSize);
@@ -13,7 +14,14 @@ const ItemCounters = ({setSelectedSize, setSelectedColor, size, color, isPink, i
         setSelectedColor(selectedColor);
     };
     const colors = isPink ? ["Black", "Pink", "Gray"] : ["Black", "Gray"]
-    const sizes = isTshirt ? ["M", "L"] : ["M", "L", "XL"]
+
+    useEffect(() => {
+        if (isTshirt && color === "Pink") {
+            setSizes(["M", "L"]);
+        } else {
+            setSizes(["M", "L", "XL"]);
+        }
+    }, [isTshirt, color]);
 
     const getColorClass = (color) => {
         switch (color) {
