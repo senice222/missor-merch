@@ -30,7 +30,7 @@ const Catalog = () => {
     const isHoodie = state.some(item => item.name === t("HOODIE"));
     const isTshirt = state.some(item => item.name === t("T-SHIRT"));
     const isPants = state.some(item => item.name === t("Pants"));
-    let currencyValue = currency === "RUB" ? "₽" : currency === "USD" ? "$" : currency === "BYN" ? "Br" : currency === "KZT" ? "₸" : currency === "KGS" ? "⃀" : currency === "AMD" ? "֏" : ""
+    let currencyValue = currency === "RUB" ? "₽" : currency === "USD" ? "$" : currency === "BYN" ? "Br" : currency === "KZT" ? "₸" : currency === "KGS" ? "⃀" : currency === "AMD" ? "֏" : "₽"
 
 
     useEffect(() => {
