@@ -1,8 +1,7 @@
 import s from './Header.module.scss'
 import {NavLink, useNavigate} from "react-router-dom";
 import logo from '../../assets/missor_header.png'
-import monkey from '../../assets/monkey.png'
-import basket from '../../assets/basket.png'
+import monkey from '../../assets/monkey.svg'
 import ruen from '../../assets/ruen.png'
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -122,6 +121,9 @@ export const Header = ({scrollTo, blockRef1}) => {
 
                             </div>
                         </div>
+                        {/* <div>
+                            <Monkey
+                        </div> */}
                         <img src={monkey} onClick={() => navigate('/contact')} alt={'monkey'}/>
                         <div onClick={() => navigate('/cart')} className={s.cartDiv}>
                             {count === 0 ? null : <div className={s.circle}>
