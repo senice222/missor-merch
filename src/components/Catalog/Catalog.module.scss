@@ -83,6 +83,47 @@
   }
 }
 
+@media (max-width: 1360px) {
+  .item {
+    width: 90% !important;
+
+    img {
+      width: 400px !important;
+    }
+  }
+}
+
+@media (max-width: 1205px) {
+  .item {
+    width: 90% !important;
+
+    img {
+      width: 350px !important;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .item {
+    width: 90% !important;
+
+    img {
+      width: 300px !important;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .item {
+    width: 90% !important;
+
+    img {
+      width: 260px !important;
+    }
+  }
+}
+
+
 @media (max-width: 500px) {
   .items {
     width: auto !important;
