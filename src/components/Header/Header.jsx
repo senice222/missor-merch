@@ -10,6 +10,7 @@ import {setCookie} from "nookies";
 import {useTranslation} from "react-i18next";
 import menu from '../../assets/menu.png'
 import {BurgerMenu} from "../BurgerMenu/BurgerMenu";
+import { Logo } from '../Svgs/Svg';
 
 export const Header = ({scrollTo, blockRef1}) => {
     const [openned, setOpenned] = useState(false)
@@ -49,7 +50,7 @@ export const Header = ({scrollTo, blockRef1}) => {
                         <NavLink className={s.link} to={'/contact'}>{t("Contact")}</NavLink>
                     </div>
                     <div onClick={() => navigate('/')} className={s.logoContainer}>
-                        <img src={logo} alt={'logo'}/>
+                        <Logo />
                     </div>
                     <div className={s.right}>
                         <div className={s.select}>
